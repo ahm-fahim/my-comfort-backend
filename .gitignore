@@ -1,0 +1,34 @@
+# Dependency directories (Never commit node_modules)
+node_modules/
+jspm_packages/
+web_modules/
+
+# Environment variables and secrets (CRITICAL for security)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+
+# Local development and logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# IDE and OS specific files
+.DS_Store
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Optional: Multer/Local upload folders 
+# (Uncomment the line below if you upload images to a local 'uploads' folder instead of directly to Cloudinary)
+# uploads/
