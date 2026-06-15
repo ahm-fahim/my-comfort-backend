@@ -1,13 +1,6 @@
 import { v2 as cloudinary } from 'cloudinary';
 import productModel from '../models/productModel.js';
 
-// Configure Cloudinary using your .env variables
-cloudinary.config({
-    cloud_name: process.env.CLOUDINARY_NAME,
-    api_key: process.env.CLOUDINARY_API_KEY,
-    api_secret: process.env.CLOUDINARY_SECRET_KEY
-});
-
 // add product
 const addProduct = async (req, res) => {
     try {
@@ -55,9 +48,11 @@ const addProduct = async (req, res) => {
 // list product
 const listProduct = async (req, res) => {
     try {
-
+        const products = await productModel.find({});
+        res.json({ success: true, products })
     } catch (error) {
-
+        console.log(error);
+        res.json({ success: false, message: error.message });
     }
 }
 
